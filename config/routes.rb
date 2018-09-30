@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     post :user_access_token, to: 'authentication#user_access_token'
     # post :forgot_password, to: 'authentication#forgot_password'
+    namespace :v1 do
+      resources :items, only: %i(index)
+    end
   end
 end

@@ -24,7 +24,6 @@ class Api::AuthenticationController < ActionController::API
 
     username = params['username']
     password = params['password']
-    byebug
     user = User.authenticate(username, password)
 
     if user.blank?
